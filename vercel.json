@@ -1,3 +1,11 @@
 {
-  "version": 2
+  "version": 2,
+  "routes": [
+    { "src": "/css/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "dest": "/css/$1" },
+    { "src": "/js/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "dest": "/js/$1" },
+    { "src": "/img/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "dest": "/img/$1" },
+    { "src": "/lib/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "dest": "/lib/$1" },
+    { "src": "/admin/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "dest": "/admin/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
