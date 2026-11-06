@@ -1,0 +1,393 @@
+/********** Custom CSS for Delight Rabbit Farm **********/
+
+/*** Navbar Brand Logo Size ***/
+.navbar-brand h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+/*** Floating WhatsApp Button ***/
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 45px;
+    right: 115px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #FFF;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+@media (max-width: 991.98px) {
+    .whatsapp-float {
+        bottom: 45px;
+        right: 45px;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
+
+    .back-to-top {
+        bottom: 115px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .back-to-top {
+        bottom: 85px;
+        right: 20px;
+    }
+}
+
+/*** Stats Counter ***/
+#stats h2 {
+    font-family: "Comic Relief", system-ui;
+    font-weight: 700;
+}
+
+/*** Service Item Custom ***/
+.service-item .btn-custom {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    border: none;
+}
+
+.service-item .btn-custom:hover {
+    background: var(--bs-dark);
+    color: var(--bs-white);
+}
+
+.service-item .btn-custom::before {
+    display: none;
+}
+
+/*** Gallery Lightbox ***/
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.gallery-item::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(24, 24, 24, 0.8));
+    color: white;
+    padding: 20px 15px 15px;
+    font-family: "Comic Relief", system-ui;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/*** Lightbox Modal ***/
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: "Comic Relief", system-ui;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80%;
+}
+
+/*** Breed Cards ***/
+.breed-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.breed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.breed-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.breed-card:hover img {
+    transform: scale(1.05);
+}
+
+.breed-card-body {
+    padding: 25px;
+}
+
+.breed-card .badge-placeholder {
+    background: #e7b961;
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.breed-specs {
+    margin-top: 15px;
+}
+
+.breed-specs .spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.breed-specs .spec-row:last-child {
+    border-bottom: none;
+}
+
+.breed-specs .spec-label {
+    color: #666;
+    font-family: "Open Sans", sans-serif;
+}
+
+.breed-specs .spec-value {
+    font-weight: 600;
+    color: #181818;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*** Smooth Scroll ***/
+html {
+    scroll-behavior: smooth;
+}
+
+/*** Form Validation Styles ***/
+.form-floating > .form-control:focus,
+.form-floating > .form-select:focus {
+    border-color: #e7b961;
+    box-shadow: 0 0 0 0.25rem rgba(231, 185, 97, 0.25);
+}
+
+/*** Admin Banner ***/
+.admin-banner {
+    background: #fff3e0;
+    color: #e7b961;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Comic Relief", system-ui;
+    border-bottom: 2px solid #e7b961;
+}
+
+/*** Placeholder Image Styling ***/
+.placeholder-img {
+    background: linear-gradient(45deg, #f5eee7 25%, transparent 25%),
+                linear-gradient(-45deg, #f5eee7 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f5eee7 75%),
+                linear-gradient(-45deg, transparent 75%, #f5eee7 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/*** Card Animations ***/
+.wow {
+    visibility: hidden;
+}
+
+.wow.animated {
+    visibility: visible;
+}
+
+/*** Dropdown Menu Animation ***/
+.dropdown-menu {
+    animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*** Focus States for Accessibility ***/
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #e7b961;
+    outline-offset: 2px;
+}
+
+/*** Loading State for Buttons ***/
+.btn.loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*** Print Styles ***/
+@media print {
+    .navbar,
+    .whatsapp-float,
+    .back-to-top,
+    .newsletter,
+    .footer,
+    .copyright {
+        display: none !important;
+    }
+}

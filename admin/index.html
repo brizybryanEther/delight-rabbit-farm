@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Delight Rabbit Farm - Admin Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Type: ADMIN" name="place">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="d-flex justify-content-center align-items-center vh-100">
+        <div class="login-box bg-light rounded p-5 w-100">
+            <h2 class="text-primary mb-4 text-center"><i class="fa-solid fa-rabbit me-2"></i>Delight Rabbit Farm Admin</h2>
+            <p class="text-secondary mb-3 text-center">Demo account login (no real authentication)</p>
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control form-control-dark" id="username" placeholder="admin" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control form-control-dark" id="password" placeholder="admin123" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-custom rounded-pill w-100">Login</button>
+            </form>
+            <p class="text-secondary text-center mt-3 small">Default: username = admin, password = admin123</p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="dashboard" class="d-none d-flex flex-column vh-100">
+        <header class="bg-dark border-bottom text-light py-3 px-4">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between w-100">
+                    <span class="h6 fw-bold"><i class="fa-solid fa-rabbit me-2"></i>Admin Console</span>
+                    <span class="text-muted small">Prototype: connect to backend API later</span>
+                    <span class="fw-bold text-success fw-semi-small"><i class="bi bi-shield-check me-1"></i>DASHBOARD</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="sidebar flex-shrink-0 bg-dark border-end" id="sidebar">
+            <nav class="nav flex-column">
+                <a class="nav-link text-warning active show rounded-pill" href="#dashboard" onclick="goToSection('dashboard')">
+                    <i class="fa fa-tachometer-alt me-3"></i>Dashboard
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#services" onclick="goToSection('services')">
+                    <i class="fa fa-list me-3"></i>Services
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#breeds" onclick="goToSection('breeds')">
+                    <i class="fa fa-rabbit me-3"></i>Breeds
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#products" onclick="goToSection('products')">
+                    <i class="fa fa-tag me-3"></i>Products & Prices
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#posts" onclick="goToSection('posts')">
+                    <i class="fa fa-newspaper me-3"></i>Blog Posts
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#gallery" onclick="goToSection('gallery')">
+                    <i class="fa fa-image me-3"></i>Gallery
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#testimonials" onclick="goToSection('testimonials')">
+                    <i class="fa fa-comment me-3"></i>Testimonials
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#team" onclick="goToSection('team')">
+                    <i class="fa fa-users me-3"></i>Team
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#messages" onclick="goToSection('messages')">
+                    <i class="fa message me-3"></i>Inquiries/Messages
+                </a>
+                <a class="nav-link text-warning rounded-pill" href="#settings" onclick="goToSection('settings')">
+                    <i class="fa settings me-3"></i>Site Settings
+                </a>
+                <a class="nav-link text-warning rounded-pill mt-auto" href="#" onclick="logout()">
+                    <i class="fa fa-sign-out-alt me-3"></i>Logout
+                </a>
+            </nav>
+        </div>
+
+        <aside class="main-content flex-grow-1 overflow-auto">
+            <div class="container-fluid">
+                <div class="py-4">
+                    <!-- Admin Banner -->
+                    <div class="alert alert-warning my-4 d-inline-block" role="alert">
+                        <i class="bi bi-exclamation-triangle me-2"></i>Prototype: connect to backend API for production use.
+                    </div>
+
+                    <!-- Dashboard Section -->
+                    <div id="section-dashboard" class="settings-section">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Dashboard Overview</h4>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-3">
+                                <div class="card-item stat-card primary">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fa fa-envelope fs-4"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="count" data-count="0" id="stat-inquiries">0</h3>
+                                        <p class="open-sans-regular small">Total Inquiries</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card-item stat-card secondary">
+                                    <div class="card-icon bg-secondary">
+                                        <i class="fa fa-newspaper fs-4"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="count" data-count="0" id="stat-posts">0</h3>
+                                        <p class="open-sans-regular small">Blog Posts</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card-item stat-card primary">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fa fa-images fs-4"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="count" data-count="0" id="stat-gallery">0</h3>
+                                        <p class="open-sans-regular small">Gallery Images</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card-item stat-card secondary">
+                                    <div class="card-icon bg-secondary">
+                                        <i class="fa fa-list fs-4"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="count" data-count="0" id="stat-services">0</h3>
+                                        <p class="open-sans-regular small">Services</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-header bg-light">
+                                        <h6 class="m-0 fw-bold">Recent Inquiries</h6>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Service</th>
+                                                    <th>Date</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="inquiries-table">
+                                                <tr>
+                                                    <td colspan="6" class="text-center text-secondary">Loading...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Section -->
+                    <div id="section-services" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Services Management</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-secondary btn-custom rounded-pill w-100" onclick="showModal('service-modal', 'service-type')">+ Add Service</button>
+                                <div class="mt-3" id="services-list">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Section -->
+                    <div id="section-products" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Products & Prices</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-secondary btn-custom rounded-pill w-100" onclick="showModal('product-modal', 'product-type')">+ Add Product</button>
+                                <div class="mt-3" id="products-list">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Posts Section -->
+                    <div id="section-posts" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Blog Posts Management</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-secondary btn-custom rounded-pill w-100" onclick="showModal('post-modal', 'post-type')">+ Add Post</button>
+                                <div class="mt-3" id="blog-posts-list">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Section -->
+                    <div id="section-gallery" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Gallery Management</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-secondary btn-custom rounded-pill w-100" onclick="showModal('gallery-modal', 'gallery-type')">+ Add Gallery Item</button>
+                                <div class="mt-3" id="gallery-items-list">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials Section -->
+                    <div id="section-testimonials" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Testimonial Management</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-secondary btn-custom rounded-pill w-100" onclick="showModal('testimonial-modal', 'testimonial-type')">+ Add Testimonial</button>
+                                <div class="mt-3" id="testimonials-list">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Section -->
+                    <div id="section-team" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Team Management</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-secondary btn-custom rounded-pill w-100" onclick="showModal('team-modal', 'team-type')">+ Add Team Member</button>
+                                <div class="mt-3" id="team-list">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Messages Section -->
+                    <div id="section-messages" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Inquiries / Messages</h4>
+                        <div class="card h-100 shadow-sm mb-4">
+                            <div class="card-header bg-light">
+                                <h6 class="m-0 fw-bold">Recent Messages</h6>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Content</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="messages-table">
+                                        <tr>
+                                            <td colspan="5" class="text-center text-secondary">No messages yet.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div id="section-settings" class="settings-section d-none">
+                        <h4 class="h4-title mb-4 pb-2 border-bottom">Site Settings</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-header bg-light">
+                                        <h6 class="m-0 fw-bold">WhatsApp Number</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="form-label open-sans-regular small">Phone number without country code</label>
+                                        <input type="text" class="form-control" id="whatsapp-number-edit" value="2507XXXXX">
+                                        <div class="invalid-feedback">Update the WhatsApp number used across all WhatsApp buttons.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-header bg-light">
+                                        <h6 class="m-0 fw-bold">Contact Details</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Address</div>
+                                        <input type="text" class="form-control" id="contact-address-edit" value="">
+                                        <div class="invalid-feedback">Update address here.</div>
+                                        <hr>
+                                        <div class="mb-2"><i class="fa fa-phone text-primary me-2"></i>Phone/WhatsApp</div>
+                                        <input type="tel" class="form-control" id="contact-phone-edit" value="+250 7XX XXX XXX">
+                                        <div class="invalid-feedback">Update phone number here.</div>
+                                        <hr>
+                                        <div class="mb-2"><i class="fa fa-envelope text-primary me-2"></i>Email</div>
+                                        <input type="email" class="form-control" id="contact-email-edit" value="info@delightrabbitfarm.rw">
+                                        <div class="invalid-feedback">Update email address here.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <h6 class="m-0 fw-bold">Social Links</h6>
+                            </div>
+                            <div class="card-body row g-2">
+                                <div class="col-md-4">
+                                    <input type="url" class="form-control form-control-dark" id="social-facebook-edit" value="">
+                                    <label class="form-label small">Facebook URL</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="url" class="form-control form-control-dark" id="social-instagram-edit" value="">
+                                    <label class="form-label small">Instagram URL</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="url" class="form-control form-control-dark" id="social-twitter-edit" value="">
+                                    <label class="form-label small">Twitter URL</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal Template -->
+    <div class="modal fade" id="modal-template" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" onclick="hideModal()" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer" id="modalFooter"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+
+    <!-- Admin App Logic -->
+    <script src="../js/admin.js"></script>
+</body>
+</html>

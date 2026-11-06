@@ -1,0 +1,424 @@
+/********** Admin Dashboard CSS **********/
+
+/*** Base Styles ***/
+:root {
+    --primary-gold: #E7B961;
+    --dark: #181818;
+    --light-cream: #F5EEE7;
+    --secondary-grey: #666666;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar, .btn, .nav-link {
+    font-family: "Comic Relief", system-ui;
+}
+
+/*** Login Screen ***/
+#login-screen {
+    background-color: var(--dark);
+}
+
+.login-box {
+    max-width: 400px;
+    background: var(--light-cream);
+    border: 2px solid var(--primary-gold);
+}
+
+.login-box h2 {
+    color: var(--primary-gold);
+}
+
+.login-box .form-control-dark {
+    background-color: var(--white);
+    border: 1px solid var(--secondary-grey);
+    color: var(--dark);
+}
+
+.login-box .form-control-dark:focus {
+    background-color: var(--white);
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(231, 185, 97, 0.25);
+    color: var(--dark);
+}
+
+.login-box .form-label {
+    color: var(--secondary-grey);
+}
+
+/*** Admin Layout ***/
+#dashboard {
+    background-color: var(--dark);
+}
+
+header {
+    background-color: var(--dark);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.sidebar {
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    top: 59px;
+    left: 0;
+    z-index: 100;
+    background-color: var(--dark);
+    border-right: 1px solid rgba(255, 255, 255, .1);
+    overflow-y: auto;
+    padding: 1.5rem 0;
+}
+
+.sidebar .nav-link {
+    color: var(--primary-gold);
+    padding: 0.75rem 1.5rem;
+    margin: 0.25rem 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: var(--primary-gold);
+    color: var(--dark);
+}
+
+.sidebar .nav-link i {
+    width: 24px;
+    text-align: center;
+}
+
+.main-content {
+    margin-left: 260px;
+    padding-top: 59px;
+    min-height: calc(100vh - 59px);
+}
+
+/*** Card Styles ***/
+.card-item {
+    border: none;
+    border-radius: 15px;
+    background: var(--light-cream);
+    transition: transform 0.3s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card .card-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card .card-body {
+    padding: 1rem;
+}
+
+.stat-card .count {
+    font-family: "Comic Relief", system-ui;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.stat-card p {
+    color: var(--secondary-grey);
+    margin: 0;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    background: var(--light-cream);
+    color: var(--dark);
+}
+
+.card-header {
+    background: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.table {
+    margin-bottom: 0;
+    color: var(--dark);
+}
+
+.table th,
+.table td {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(231, 185, 97, 0.1);
+}
+
+/*** Form Styles ***/
+.form-control {
+    background-color: var(--white);
+    border: 1px solid var(--secondary-grey);
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    background-color: var(--white);
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(231, 185, 97, 0.25);
+    color: var(--dark);
+}
+
+.form-control-dark {
+    background-color: var(--white);
+    border: 1px solid var(--secondary-grey);
+    color: var(--dark);
+}
+
+.form-label {
+    color: var(--secondary-grey);
+    font-weight: 600;
+}
+
+/*** Button Styles ***/
+.btn {
+    border-radius: 50px;
+    font-weight: 400;
+    padding: 0.625rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    background-color: #d4a855;
+    border-color: #d4a855;
+    color: var(--dark);
+}
+
+.btn-outline-secondary {
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    color: var(--dark);
+}
+
+.btn-custom {
+    font-family: "Comic Relief", system-ui;
+}
+
+/*** Modal Styles ***/
+.modal-content {
+    background: var(--light-cream);
+    border: 1px solid rgba(231, 185, 97, 0.3);
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-family: "Comic Relief", system-ui;
+    color: var(--dark);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/*** Table Styles ***/
+.table thead th {
+    font-weight: 600;
+    color: var(--secondary-grey);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+/*** Badge Styles ***/
+.badge {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+}
+
+/*** Alert Styles ***/
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+.alert-warning {
+    background-color: #fff3e0;
+    color: #e7b961;
+    border: 1px solid #e7b961;
+}
+
+/*** Scrollbar ***/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d4a855;
+}
+
+/*** Responsive ***/
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 1050;
+        padding-top: 59px;
+        transition: left 0.3s ease;
+        border-right: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding-top: 59px;
+    }
+
+    .sidebar-toggler {
+        display: block !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .main-content {
+        padding: 1rem;
+    }
+}
+
+/*** Utility Classes ***/
+.h4-title {
+    font-family: "Comic Relief", system-ui;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.text-warning {
+    color: var(--primary-gold) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-gold) !important;
+}
+
+.bg-secondary {
+    background-color: var(--primary-gold) !important;
+    opacity: 0.8;
+}
+
+.bg-light {
+    background-color: var(--light-cream) !important;
+}
+
+.text-primary {
+    color: var(--primary-gold) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-grey) !important;
+}
+
+.text-dark {
+    color: var(--dark) !important;
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-light {
+    color: var(--light-cream) !important;
+}
+
+.open-sans-regular {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.open-sans-bold {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+}
+
+.comic-relief-regular {
+    font-family: "Comic Relief", system-ui;
+    font-weight: 400;
+}
+
+.comic-relief-bold {
+    font-family: "Comic Relief", system-ui;
+    font-weight: 700;
+}
+
+.fw-semi-small {
+    font-size: 0.75rem;
+}
+
+/*** Empty State ***/
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--secondary-grey);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-gold);
+}
