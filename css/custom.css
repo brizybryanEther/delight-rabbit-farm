@@ -1,5 +1,20 @@
 /********** Custom CSS for Delight Rabbit Farm **********/
 
+/*** Performance Optimizations ***/
+section {
+    contain-intrinsic-size: 100% 500px;
+    content-visibility: auto;
+}
+
+img {
+    content-visibility: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
 /*** Navbar Brand Logo Size ***/
 .navbar-brand h1 {
     font-size: 1.2rem;
