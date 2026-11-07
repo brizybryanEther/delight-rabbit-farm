@@ -15,11 +15,6 @@ html {
     scrollbar-width: thin;
 }
 
-/*** Hero Caption Position ***/
-#header-carousel .carousel-caption {
-    bottom: 35%;
-}
-
 /*** Remove blur from service images on mobile ***/
 .service-item img {
     filter: none !important;
