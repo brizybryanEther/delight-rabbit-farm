@@ -6,7 +6,7 @@ const SITE_DATA = {
     // Contact information
     contact: {
         address: "Rwamagana, Rwanda",
-        phone: "+250 788448889",
+        phone: "+250 788 448 889",
         email: "info@delightrabbitfarm.rw",
         hours: {
             mondayFriday: "09:00 am - 07:00 pm",
