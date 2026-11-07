@@ -4,7 +4,7 @@
 // Make CONFIG globally available for app.js
 window.CONFIG = {
     // WhatsApp configuration
-    whatsAppNumber: "2507XXXXX", // Update this with the actual WhatsApp number for Rwanda
+    whatsAppNumber: "250788448889", // Update this with the actual WhatsApp number for Rwanda
     
     // Contact information (will be overridden by data.js)
     contact: {
