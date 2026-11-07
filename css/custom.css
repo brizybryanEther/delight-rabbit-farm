@@ -15,6 +15,15 @@ html {
     scrollbar-width: thin;
 }
 
+/*** Remove blur from service images on mobile ***/
+.service-item img {
+    filter: none !important;
+}
+
+.service-item:hover img {
+    filter: none !important;
+}
+
 /*** Navbar Brand Logo Size ***/
 .navbar-brand h1 {
     font-size: 1.2rem;
