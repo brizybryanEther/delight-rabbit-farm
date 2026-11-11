@@ -30,6 +30,102 @@ html {
     margin-bottom: 0;
 }
 
+/*** Hero / Carousel Viewport Optimization ***/
+#header-carousel .carousel-item {
+    position: relative;
+    height: 82vh;
+    min-height: 520px;
+    max-height: 720px;
+}
+
+#header-carousel .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    background: rgba(24, 24, 24, .55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-caption .row {
+    width: 100%;
+    margin: 0;
+}
+
+#header-carousel h1 {
+    font-size: clamp(2rem, 3.5vw, 3.25rem);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+#header-carousel h5 {
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    letter-spacing: 0.5px;
+}
+
+#header-carousel .carousel-control-prev,
+#header-carousel .carousel-control-next {
+    margin-top: 80px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background: rgba(24, 24, 24, 0.92) !important;
+        backdrop-filter: blur(8px);
+    }
+
+    #header-carousel .carousel-item {
+        height: 75vh;
+        min-height: 480px;
+        max-height: 600px;
+    }
+
+    .carousel-caption {
+        padding-top: 75px;
+    }
+
+    #header-carousel h1 {
+        font-size: clamp(1.65rem, 5vw, 2.25rem);
+    }
+}
+
+@media (max-width: 767.98px) {
+    #header-carousel .carousel-control-prev,
+    #header-carousel .carousel-control-next {
+        width: 8%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #header-carousel .carousel-item {
+        min-height: 440px;
+    }
+
+    .carousel-caption {
+        padding-top: 60px;
+    }
+}
+
 /*** Floating WhatsApp Button ***/
 .whatsapp-float {
     position: fixed;
