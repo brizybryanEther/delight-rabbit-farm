@@ -199,9 +199,9 @@
 
 #header-carousel .carousel-item {
     position: relative;
-    height: 82vh;
-    min-height: 520px;
-    max-height: 720px;
+    height: 72vh;
+    min-height: 460px;
+    max-height: 600px;
 }
 
 #header-carousel .carousel-item img {
@@ -216,9 +216,9 @@
 
 @media (max-width: 992px) {
     #header-carousel .carousel-item {
-        height: 75vh;
-        min-height: 480px;
-        max-height: 600px;
+        height: 68vh;
+        min-height: 420px;
+        max-height: 520px;
     }
 }
 

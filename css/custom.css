@@ -30,12 +30,17 @@ html {
     margin-bottom: 0;
 }
 
+/*** Navbar Slimmer Padding ***/
+.navbar .navbar-nav .nav-link {
+    padding: 22px 0 !important;
+}
+
 /*** Hero / Carousel Viewport Optimization ***/
 #header-carousel .carousel-item {
     position: relative;
-    height: 82vh;
-    min-height: 520px;
-    max-height: 720px;
+    height: 72vh;
+    min-height: 460px;
+    max-height: 600px;
 }
 
 #header-carousel .carousel-item img {
@@ -53,7 +58,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    padding-top: 90px;
+    padding-top: 70px;
     padding-bottom: 20px;
     background: rgba(24, 24, 24, .55);
     display: flex;
@@ -67,19 +72,19 @@ html {
 }
 
 #header-carousel h1 {
-    font-size: clamp(2rem, 3.5vw, 3.25rem);
-    line-height: 1.25;
+    font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+    line-height: 1.2;
     font-weight: 700;
 }
 
 #header-carousel h5 {
-    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
     letter-spacing: 0.5px;
 }
 
 #header-carousel .carousel-control-prev,
 #header-carousel .carousel-control-next {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 @media (max-width: 991.98px) {
@@ -89,17 +94,17 @@ html {
     }
 
     #header-carousel .carousel-item {
-        height: 75vh;
-        min-height: 480px;
-        max-height: 600px;
+        height: 68vh;
+        min-height: 420px;
+        max-height: 520px;
     }
 
     .carousel-caption {
-        padding-top: 75px;
+        padding-top: 65px;
     }
 
     #header-carousel h1 {
-        font-size: clamp(1.65rem, 5vw, 2.25rem);
+        font-size: clamp(1.5rem, 4.5vw, 2rem);
     }
 }
 
@@ -118,11 +123,11 @@ html {
 
 @media (max-width: 575.98px) {
     #header-carousel .carousel-item {
-        min-height: 440px;
+        min-height: 380px;
     }
 
     .carousel-caption {
-        padding-top: 60px;
+        padding-top: 55px;
     }
 }
 
