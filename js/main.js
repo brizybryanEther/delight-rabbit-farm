@@ -14,13 +14,29 @@
     // Initiate the wowjs
     new WOW().init();
 
-    // Sticky Navbar
+    // Hide navbar on scroll down, reveal on scroll up
+    var lastScrollTop = 0;
+    var navbar = $('.navbar');
+
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-            $('.navbar').addClass('position-fixed bg-dark shadow-sm');
+        var currentScroll = $(this).scrollTop();
+
+        if (currentScroll > 0) {
+            navbar.addClass('position-fixed bg-dark shadow-sm');
         } else {
-            $('.navbar').removeClass('position-fixed bg-dark shadow-sm');
+            navbar.removeClass('position-fixed bg-dark shadow-sm navbar--hidden');
+            return;
         }
+
+        if (currentScroll > lastScrollTop && currentScroll > 80) {
+            // Scrolling DOWN — hide
+            navbar.addClass('navbar--hidden');
+        } else {
+            // Scrolling UP — reveal
+            navbar.removeClass('navbar--hidden');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 
     // Back to top button

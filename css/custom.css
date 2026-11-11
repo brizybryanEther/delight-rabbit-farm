@@ -30,7 +30,17 @@ html {
     margin-bottom: 0;
 }
 
-/*** Navbar Slimmer Padding ***/
+/*** Navbar Auto-Hide on Scroll ***/
+.navbar {
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.3s ease,
+                box-shadow 0.3s ease !important;
+    will-change: transform;
+}
+
+.navbar--hidden {
+    transform: translateY(-100%) !important;
+}
 .navbar .navbar-nav .nav-link {
     padding: 22px 0 !important;
 }
