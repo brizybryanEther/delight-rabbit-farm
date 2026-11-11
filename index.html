@@ -35,7 +35,73 @@
     <link href="css/style.css?v=3" rel="stylesheet">
 
     <!-- Custom Stylesheet -->
-    <link href="css/custom.css?v=3" rel="stylesheet">
+    <link href="css/custom.css?v=4" rel="stylesheet">
+
+    <!-- Viewport Centered Hero Styles -->
+    <style>
+        #header-carousel,
+        #header-carousel .carousel-inner,
+        #header-carousel .carousel-item {
+            height: 100vh !important;
+            height: 100dvh !important;
+            min-height: 520px !important;
+            position: relative !important;
+        }
+
+        #header-carousel .carousel-item img {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center !important;
+        }
+
+        .carousel-caption {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: rgba(24, 24, 24, 0.55) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 1 !important;
+        }
+
+        .carousel-caption .row {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        #header-carousel .carousel-control-prev,
+        #header-carousel .carousel-control-next {
+            margin-top: 0 !important;
+        }
+
+        #header-carousel h1 {
+            font-size: clamp(2.2rem, 4.2vw, 3.8rem) !important;
+            line-height: 1.25 !important;
+            font-weight: 700 !important;
+        }
+
+        #header-carousel h5 {
+            font-size: clamp(1rem, 1.8vw, 1.35rem) !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        @media (max-width: 991.98px) {
+            #header-carousel h1 {
+                font-size: clamp(1.65rem, 5vw, 2.3rem) !important;
+            }
+        }
+    </style>
 </head>
 
 <body>

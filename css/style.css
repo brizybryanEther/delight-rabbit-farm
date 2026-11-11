@@ -188,7 +188,7 @@
 #header-carousel .carousel-control-prev,
 #header-carousel .carousel-control-next {
     width: 10%;
-    margin-top: 100px;
+    margin-top: 0;
 }
 
 .carousel-control-prev-icon,
@@ -197,11 +197,13 @@
     height: 3rem;
 }
 
+#header-carousel,
+#header-carousel .carousel-inner,
 #header-carousel .carousel-item {
     position: relative;
-    height: 72vh;
-    min-height: 460px;
-    max-height: 600px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 520px;
 }
 
 #header-carousel .carousel-item img {
@@ -212,14 +214,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
-
-@media (max-width: 992px) {
-    #header-carousel .carousel-item {
-        height: 68vh;
-        min-height: 420px;
-        max-height: 520px;
-    }
 }
 
 .page-header {
