@@ -122,20 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
     animateStats();
 });
 
-// Navbar scroll effect (already handled in main.js jQuery code)
-function initNavbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-            navbar.classList.add('position-fixed', 'bg-dark', 'shadow-sm');
-        } else {
-            navbar.classList.remove('position-fixed', 'bg-dark', 'shadow-sm');
-        }
-    });
-}
-
 // Smooth scrolling for anchor links
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

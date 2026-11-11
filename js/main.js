@@ -14,30 +14,20 @@
     // Initiate the wowjs
     new WOW().init();
 
-    // Hide navbar on scroll down, reveal on scroll up
-    var lastScrollTop = 0;
+    // Make menu disappear when scrolling
     var navbar = $('.navbar');
-
-    $(window).scroll(function () {
-        var currentScroll = $(this).scrollTop();
-
-        if (currentScroll > 0) {
-            navbar.addClass('position-fixed bg-dark shadow-sm');
-        } else {
-            navbar.removeClass('position-fixed bg-dark shadow-sm navbar--hidden');
-            return;
-        }
-
-        if (currentScroll > lastScrollTop && currentScroll > 80) {
-            // Scrolling DOWN — hide
+    function checkNavbarScroll() {
+        if ($(window).scrollTop() > 50) {
             navbar.addClass('navbar--hidden');
+            if ($('#navbarCollapse').hasClass('show')) {
+                $('#navbarCollapse').collapse('hide');
+            }
         } else {
-            // Scrolling UP — reveal
             navbar.removeClass('navbar--hidden');
         }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
+    }
+    $(window).scroll(checkNavbarScroll);
+    checkNavbarScroll();
 
     // Back to top button
     $(window).scroll(function () {
