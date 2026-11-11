@@ -120,52 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Stats counter animation
     animateStats();
-
-    // Night Mode Toggle
-    initThemeToggle();
 });
-
-// Night Mode Toggle Functionality
-function initThemeToggle() {
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            if (document.body) document.body.classList.add('dark-mode');
-            document.querySelectorAll('.theme-toggle-btn i').forEach(function(icon) {
-                icon.className = 'fa-solid fa-sun';
-            });
-            document.querySelectorAll('.theme-toggle-btn').forEach(function(btn) {
-                btn.setAttribute('title', 'Switch to Day Mode');
-                btn.setAttribute('aria-label', 'Switch to Day Mode');
-            });
-        } else {
-            document.documentElement.removeAttribute('data-theme');
-            if (document.body) document.body.classList.remove('dark-mode');
-            document.querySelectorAll('.theme-toggle-btn i').forEach(function(icon) {
-                icon.className = 'fa-solid fa-moon';
-            });
-            document.querySelectorAll('.theme-toggle-btn').forEach(function(btn) {
-                btn.setAttribute('title', 'Switch to Night Mode');
-                btn.setAttribute('aria-label', 'Switch to Night Mode');
-            });
-        }
-    }
-
-    var savedTheme = localStorage.getItem('drf_theme');
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    applyTheme(initialTheme);
-
-    document.querySelectorAll('.theme-toggle-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-            var nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('drf_theme', nextTheme);
-            applyTheme(nextTheme);
-        });
-    });
-}
 
 // Navbar scroll effect (already handled in main.js jQuery code)
 function initNavbarScroll() {
