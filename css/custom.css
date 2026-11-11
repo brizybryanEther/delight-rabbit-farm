@@ -30,6 +30,66 @@ html {
     margin-bottom: 0;
 }
 
+/*** Vibrant Hero Overlays ***/
+#header-carousel .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(231, 185, 97, 0.55) 0%, rgba(24, 24, 24, 0.45) 60%, rgba(18, 18, 18, 0.7) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+#header-carousel .carousel-item img {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#header-carousel .carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+#header-carousel .carousel-caption {
+    z-index: 2;
+    background: transparent !important;
+    padding-top: 140px;
+}
+
+#header-carousel .carousel-caption h5 {
+    color: #fff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+#header-carousel .carousel-caption h1 {
+    color: #fff !important;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+    letter-spacing: -0.5px;
+}
+
+#header-carousel .carousel-caption .btn-primary {
+    box-shadow: 0 4px 15px rgba(231, 185, 97, 0.4);
+    transition: all 0.3s ease;
+}
+
+#header-carousel .carousel-caption .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 185, 97, 0.6);
+    background: #d4a348 !important;
+    border-color: #d4a348 !important;
+}
+
+/*** Hero Decorative Glow ***/
+#header-carousel .carousel-caption::before {
+    content: "";
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 120px; height: 4px;
+    background: #E7B961;
+    z-index: -1;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
 /*** Navbar Disappear on Scroll ***/
 .navbar {
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
