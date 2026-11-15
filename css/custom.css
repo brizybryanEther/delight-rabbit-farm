@@ -77,6 +77,23 @@ html {
     border-color: #d4a348 !important;
 }
 
+/*** Service Cards - Equal Height, No Distortion ***/
+.service-item img {
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item .position-relative {
+    overflow: hidden;
+}
+
 /*** Hero Decorative Glow ***/
 #header-carousel .carousel-caption::before {
     content: "";
