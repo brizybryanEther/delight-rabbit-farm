@@ -602,38 +602,3 @@ textarea:focus {
         display: none !important;
     }
 }
-
-/*** Enhanced Services Dropdown ***/
-.dropdown-menu {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    min-width: 320px;
-}
-
-.dropdown-item {
-    border: none;
-    transition: all 0.2s ease;
-}
-
-.dropdown-item:hover {
-    background: #fff3e0 !important;
-    color: #181818 !important;
-    transform: translateX(5px);
-}
-
-.dropdown-item .badge {
-    font-size: 0.85rem;
-    padding: 6px 12px;
-}
-
-.dropdown-divider {
-    margin: 0.25rem 0;
-    border-color: #e7b961;
-    opacity: 0.3;
-}
-
-.dropdown-item .fa {
-    width: 20px;
-    text-align: center;
-}
