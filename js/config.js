@@ -34,13 +34,13 @@ window.CONFIG = {
     
     // Service dropdown items
     serviceDropdownItems: [
-        { id: "training", text: "Rabbit Farming Training" },
-        { id: "breeding", text: "Breeding Rabbits" },
-        { id: "semen", text: "Rabbit Semen" },
-        { id: "meat", text: "Rabbit Meat" },
-        { id: "pellets", text: "Rabbit Pellets" },
-        { id: "forage", text: "Hay & Forage" },
-        { id: "consultancy", text: "Farm Consultancy" }
+        { id: "training", text: "Rabbit Farming Training", url: "service-training.html" },
+        { id: "breeding", text: "Breeding Rabbits", url: "service-breeding.html" },
+        { id: "semen", text: "Rabbit Semen", url: "service-semen.html" },
+        { id: "meat", text: "Rabbit Meat", url: "service-meat.html" },
+        { id: "pellets", text: "Rabbit Pellets", url: "service-pellets.html" },
+        { id: "forage", text: "Hay & Forage", url: "service-forage.html" },
+        { id: "consultancy", text: "Farm Consultancy", url: "service-consultancy.html" }
     ],
     
     // Social media links (will be overridden by data.js)

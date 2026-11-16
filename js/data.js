@@ -65,6 +65,7 @@ const SITE_DATA = {
             title: "Rabbit Farming Training",
             description: "Hands-on courses for beginners and commercial farmers covering housing, feeding, breeding, health management, and business planning.",
             image: "img/service-1.jpg",
+            url: "service-training.html",
             alt: "Rabbit farming training session at Delight Rabbit Farm",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Rabbit Farming Training."
         },
@@ -74,6 +75,7 @@ const SITE_DATA = {
             title: "Breeding Rabbits",
             description: "Purebred breeding stock with breed and pedigree information on request. Bucks, does, and young stock available.",
             image: "img/service-2.jpg",
+            url: "service-breeding.html",
             alt: "Purebred breeding rabbits at Delight Rabbit Farm",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Breeding Rabbits (purebred stock)."
         },
@@ -83,6 +85,7 @@ const SITE_DATA = {
             title: "Rabbit Semen",
             description: "Semen from purebred bucks to improve herd genetics and keep breed lines pure. Handled and delivered with care.",
             image: "img/service-3.jpg",
+            url: "service-semen.html",
             alt: "Rabbit semen collection and storage equipment",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Rabbit Semen for genetic improvement."
         },
@@ -92,6 +95,7 @@ const SITE_DATA = {
             title: "Rabbit Meat",
             description: "Fresh, lean, hygienically processed rabbit meat from healthy, well-managed stock. For households, restaurants, and retailers.",
             image: "img/service-4.jpg",
+            url: "service-meat.html",
             alt: "Fresh rabbit meat products from Delight Rabbit Farm",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Rabbit Meat products."
         },
@@ -101,6 +105,7 @@ const SITE_DATA = {
             title: "Rabbit Pellets",
             description: "Balanced, nutritious feed pellets formulated for every growth stage of rabbits.",
             image: "img/service-5.jpg",
+            url: "service-pellets.html",
             alt: "Rabbit feed pellets at Delight Rabbit Farm",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Rabbit Pellets."
         },
@@ -110,6 +115,7 @@ const SITE_DATA = {
             title: "Hay & Forage",
             description: "Quality hay and fresh forage for healthy digestion and optimal rabbit health.",
             image: "img/service-6.jpg",
+            url: "service-forage.html",
             alt: "Hay and fresh forage for rabbits at Delight Rabbit Farm",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Hay & Forage."
         },
@@ -119,6 +125,7 @@ const SITE_DATA = {
             title: "Farm Consultancy",
             description: "Farm setup, hutch design, herd management, and profitability advice for new and existing rabbit farms.",
             image: "img/service-7.jpg",
+            url: "service-consultancy.html",
             alt: "Farm consultancy and hutch design at Delight Rabbit Farm",
             whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Farm Consultancy services."
         }
