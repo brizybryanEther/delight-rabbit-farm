@@ -131,47 +131,67 @@ const SITE_DATA = {
         }
     ],
 
-    // Purebred Breeds (placeholder - owner to fill in real breeds)
+    // Purebred Breeds
     breeds: [
         {
             id: "breed1",
-            name: "Breed Name 1",
-            image: "img/service-1.jpg",
-            alt: "Breed Name 1 purebred rabbit",
-            temperament: "Docile, easy to handle",
-            matureWeight: "3.5 - 4.5 kg",
-            bestUse: "Meat & Breeding",
-            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Breed Name 1 availability."
+            name: "New Zealand White",
+            image: "img/gallery-newzealand.jpg",
+            alt: "New Zealand White purebred rabbit",
+            temperament: "Docile, high meat yield",
+            matureWeight: "4.5 - 5.5 kg",
+            bestUse: "Commercial Meat & Breeding",
+            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in New Zealand White availability."
         },
         {
             id: "breed2",
-            name: "Breed Name 2",
-            image: "img/service-2.jpg",
-            alt: "Breed Name 2 purebred rabbit",
+            name: "Californian White",
+            image: "img/gallery-california.jpg",
+            alt: "Californian purebred rabbit",
             temperament: "Active, good mothers",
             matureWeight: "4.0 - 5.0 kg",
-            bestUse: "Breeding & Show",
-            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Breed Name 2 availability."
+            bestUse: "Commercial Meat & Crossbreeding",
+            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Californian White availability."
         },
         {
             id: "breed3",
-            name: "Breed Name 3",
-            image: "img/service-3.jpg",
-            alt: "Breed Name 3 purebred rabbit",
-            temperament: "Calm, fast growing",
-            matureWeight: "4.5 - 5.5 kg",
-            bestUse: "Meat Production",
-            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Breed Name 3 availability."
+            name: "Flemish Giant",
+            image: "img/gallery-flemish.jpg",
+            alt: "Flemish Giant purebred rabbit",
+            temperament: "The Gentle Giant, calm & large",
+            matureWeight: "6.5 - 9.0+ kg",
+            bestUse: "Herd Size Upgrading & Pets",
+            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Flemish Giant availability."
         },
         {
             id: "breed4",
-            name: "Breed Name 4",
-            image: "img/service-4.jpg",
-            alt: "Breed Name 4 purebred rabbit",
+            name: "Dutch",
+            image: "img/gallery-dutch.jpg",
+            alt: "Dutch purebred rabbit",
             temperament: "Gentle, prolific",
-            matureWeight: "3.0 - 4.0 kg",
-            bestUse: "Breeding & Pets",
-            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Breed Name 4 availability."
+            matureWeight: "2.2 - 3.0 kg",
+            bestUse: "Smallholder Farms, Fostering & Pets",
+            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Dutch rabbit availability."
+        },
+        {
+            id: "breed5",
+            name: "Angola",
+            image: "img/gallery-angola.jpg",
+            alt: "Angola purebred rabbit",
+            temperament: "Hardy, good breeders",
+            matureWeight: "3.5 - 4.5 kg",
+            bestUse: "Wool, Meat & Breeding",
+            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Angola rabbit availability."
+        },
+        {
+            id: "breed6",
+            name: "Checkered Giant",
+            image: "img/gallery-checkred.jpg",
+            alt: "Checkered Giant purebred rabbit",
+            temperament: "Large, active foragers",
+            matureWeight: "5.0 - 6.5 kg",
+            bestUse: "Hardy Breeding & Meat",
+            whatsappMessage: "Hello Delight Rabbit Farm, I'm interested in Checkered Giant availability."
         }
     ],
 
