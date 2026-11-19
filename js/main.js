@@ -3,11 +3,13 @@
 
     // Spinner
     var spinner = function () {
-        setTimeout(function () {
+        // Keep the logo visible while the page loads, then hide the overlay.
+        // Use the window load event to ensure all resources are ready.
+        $(window).on('load', function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
-        }, 1);
+        });
     };
     spinner();
 
