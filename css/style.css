@@ -101,6 +101,20 @@
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
+.navbar-brand {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 70px !important;
+    width: auto !important;
+    max-height: 70px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
 .navbar .navbar-nav .nav-link {
     margin-right: 25px;
     padding: 40px 0;

@@ -28,8 +28,8 @@ html {
    Brand Logo System (Delight Rabbit Farm)
    ========================================================================== */
 .navbar-brand {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     margin-right: 0;
     display: inline-flex;
     align-items: center;
@@ -37,12 +37,19 @@ html {
     text-decoration: none;
 }
 
+.navbar-brand picture {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
 .navbar-logo {
-    height: 76px;
-    width: auto;
-    max-height: 80px;
-    object-fit: contain;
-    display: block;
+    height: 70px !important;
+    width: auto !important;
+    max-height: 70px !important;
+    max-width: 90px !important;
+    object-fit: contain !important;
+    display: block !important;
     transition: height 0.3s ease, transform 0.2s ease;
 }
 
@@ -106,21 +113,23 @@ html {
         padding: 4px 0;
     }
     .navbar-logo {
-        height: 54px;
-        max-height: 56px;
+        height: 52px !important;
+        max-height: 52px !important;
+        max-width: 70px !important;
     }
 }
 
 @media (max-width: 767.98px) {
     .footer-logo {
-        width: 100px;
+        width: 100px !important;
     }
 }
 
 @media (max-width: 360px) {
     .navbar-logo {
-        height: 46px;
-        max-height: 48px;
+        height: 44px !important;
+        max-height: 44px !important;
+        max-width: 60px !important;
     }
 }
 
