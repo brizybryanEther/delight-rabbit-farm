@@ -36,41 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form WhatsApp send functionality
-    function initFormWhatsApp() {
-        const form = document.getElementById('contact-form');
-        if (!form) return;
-        
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = form.elements['name'].value;
-            const email = form.elements['email'].value;
-            const phone = form.elements['phone'].value;
-            const serviceInterest = form.elements['service-interest'].value;
-            const message = form.elements['message'].value;
-            const sendWhatsApp = form.elements['send-whatsapp'].checked;
-            
-            // Build the WhatsApp message
-            let waMessage = `Hello Delight Rabbit Farm,\n\n`;
-            waMessage += `Name: ${name}\n`;
-            waMessage += `Email: ${email}\n`;
-            waMessage += `Phone: ${phone}\n`;
-            if (serviceInterest) {
-                waMessage += `Service Interest: ${serviceInterest}\n`;
-            }
-            waMessage += `Message: ${message}\n`;
-            
-            if (sendWhatsApp && CONFIG.whatsAppNumber) {
-                window.open(`https://wa.me/${CONFIG.whatsAppNumber}?text=${encodeURIComponent(waMessage)}`, '_blank');
-            }
-            
-            // Show success message
-            showFormMessage(true);
-            form.reset();
-        });
-    }
-    
     // Stats counter animation
     function animateStats() {
         const stats = document.querySelectorAll('#stats .display-4[data-count]');
@@ -111,12 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         stats.forEach(stat => observer.observe(stat));
     }
-    
+
     // Initialize WhatsApp buttons
     initWhatsAppButtons();
-    
-    // Form submit handler
-    initFormWhatsApp();
     
     // Stats counter animation
     animateStats();
