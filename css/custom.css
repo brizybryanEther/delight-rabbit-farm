@@ -96,10 +96,11 @@ html {
 }
 
 .footer-logo {
-    width: 120px;
+    width: 130px;
     height: auto;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 
 /* Responsive Logo Adjustments */
@@ -116,7 +117,7 @@ html {
 
 @media (max-width: 767.98px) {
     .footer-logo {
-        width: 100px !important;
+        width: 110px !important;
     }
 }
 
