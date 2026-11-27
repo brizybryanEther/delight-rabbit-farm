@@ -27,7 +27,6 @@ window.CONFIG = {
         { id: "home", text: "Home", anchor: "#home" },
         { id: "about", text: "About Us", anchor: "#about" },
         { id: "services", text: "Services", anchor: "#services", dropdown: true },
-        { id: "blog", text: "Blog & Education", anchor: "#blog" },
         { id: "gallery", text: "Gallery", anchor: "#gallery" },
         { id: "contact", text: "Contact Us", anchor: "#contact" }
     ],
