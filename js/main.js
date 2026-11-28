@@ -1,20 +1,19 @@
 (function ($) {
     "use strict";
 
-    // Spinner
-    var spinner = function () {
-        // Keep the logo visible while the page loads, then hide the overlay.
-        // Use the window load event to ensure all resources are ready.
-        $(window).on('load', function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        });
+    // Spinner - hide as soon as DOM is ready so images/videos don't block rendering
+    var hideSpinner = function () {
+        var el = document.getElementById('spinner');
+        if (el) {
+            el.classList.remove('show');
+        }
     };
-    spinner();
-
-    // Initiate the wowjs
-    new WOW().init();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideSpinner);
+    } else {
+        hideSpinner();
+    }
+    setTimeout(hideSpinner, 1200);
 
     // Make menu disappear when scrolling
     var navbar = $('.navbar');
