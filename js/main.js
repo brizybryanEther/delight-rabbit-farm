@@ -127,7 +127,7 @@
         modal.setAttribute('aria-modal', 'true');
         modal.setAttribute('aria-label', 'Gallery media viewer');
         modal.innerHTML =
-            '<button type="button" class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<button type="button" class="lightbox-close" aria-label="Close"></button>' +
             '<button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>' +
             '<img src="" alt="" style="display:none;">' +
             '<video controls playsinline style="display:none;"></video>' +
