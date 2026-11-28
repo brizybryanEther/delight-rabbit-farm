@@ -402,7 +402,13 @@ html {
     border-radius: 8px;
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
     transition: transform 0.5s ease, filter 0.5s ease;
     cursor: pointer;
 }
@@ -424,6 +430,7 @@ html {
     font-family: "Comic Relief", system-ui;
     font-size: 0.9rem;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
