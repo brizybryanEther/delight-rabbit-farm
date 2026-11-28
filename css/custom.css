@@ -496,53 +496,53 @@ html {
     position: absolute;
     top: 16px;
     right: 16px;
-    min-width: 56px;
-    height: 56px;
-    padding: 0 18px;
-    background: rgba(220, 50, 50, 0.85);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    min-width: 52px;
+    height: 36px;
+    padding: 0 14px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 999px;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 5px;
     z-index: 10001;
-    transition: background 0.2s ease, transform 0.15s ease;
+    transition: background 0.2s ease, color 0.2s ease;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .lightbox-close::before {
     content: '✕';
-    font-size: 20px;
+    font-size: 13px;
     line-height: 1;
 }
 
 .lightbox-close::after {
     content: 'Close';
-    font-size: 15px;
+    font-size: 13px;
     font-family: system-ui, sans-serif;
 }
 
 .lightbox-close:hover,
 .lightbox-close:active {
-    background: rgba(200, 30, 30, 1);
-    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
 }
 
 @media (max-width: 576px) {
     .lightbox-close {
         top: 12px;
         right: 12px;
-        min-width: 70px;
-        height: 44px;
-        font-size: 15px;
+        min-width: 64px;
+        height: 38px;
+        font-size: 13px;
     }
 }
 
