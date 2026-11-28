@@ -117,6 +117,76 @@
         });
     }
 
+    // Gallery Lightbox — open photos individually on click
+    var galleryImages = Array.prototype.slice.call(document.querySelectorAll('#gallery-grid .gallery-item img'));
+    if (galleryImages.length > 0) {
+        var currentIdx = 0;
+        var modal = document.createElement('div');
+        modal.className = 'lightbox-modal';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-label', 'Gallery image viewer');
+        modal.innerHTML =
+            '<button type="button" class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>' +
+            '<img src="" alt="">' +
+            '<button type="button" class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>' +
+            '<div class="lightbox-caption"></div>';
+        document.body.appendChild(modal);
+
+        var modalImg = modal.querySelector('img');
+        var modalCaption = modal.querySelector('.lightbox-caption');
+        var closeBtn = modal.querySelector('.lightbox-close');
+        var prevBtn = modal.querySelector('.lightbox-prev');
+        var nextBtn = modal.querySelector('.lightbox-next');
+
+        function showImage(index) {
+            currentIdx = (index + galleryImages.length) % galleryImages.length;
+            var target = galleryImages[currentIdx];
+            modalImg.src = target.getAttribute('src');
+            modalImg.alt = target.getAttribute('alt') || '';
+            modalCaption.textContent = target.getAttribute('alt') || '';
+        }
+
+        function openLightbox(index) {
+            showImage(index);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        galleryImages.forEach(function (img, idx) {
+            img.addEventListener('click', function () {
+                openLightbox(idx);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showImage(currentIdx - 1);
+        });
+        nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showImage(currentIdx + 1);
+        });
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener('keydown', function (e) {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showImage(currentIdx - 1);
+            if (e.key === 'ArrowRight') showImage(currentIdx + 1);
+        });
+    }
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
