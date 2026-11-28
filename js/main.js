@@ -117,50 +117,75 @@
         });
     }
 
-    // Gallery Lightbox — open photos individually on click
-    var galleryImages = Array.prototype.slice.call(document.querySelectorAll('#gallery-grid .gallery-item img'));
-    if (galleryImages.length > 0) {
+    // Gallery Lightbox — open photos and video individually on click
+    var galleryItems = Array.prototype.slice.call(document.querySelectorAll('#gallery-grid .gallery-item img, #gallery-grid .gallery-item video'));
+    if (galleryItems.length > 0) {
         var currentIdx = 0;
         var modal = document.createElement('div');
         modal.className = 'lightbox-modal';
         modal.setAttribute('role', 'dialog');
         modal.setAttribute('aria-modal', 'true');
-        modal.setAttribute('aria-label', 'Gallery image viewer');
+        modal.setAttribute('aria-label', 'Gallery media viewer');
         modal.innerHTML =
             '<button type="button" class="lightbox-close" aria-label="Close">&times;</button>' +
             '<button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>' +
-            '<img src="" alt="">' +
+            '<img src="" alt="" style="display:none;">' +
+            '<video controls playsinline style="display:none;"></video>' +
             '<button type="button" class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>' +
             '<div class="lightbox-caption"></div>';
         document.body.appendChild(modal);
 
         var modalImg = modal.querySelector('img');
+        var modalVideo = modal.querySelector('video');
         var modalCaption = modal.querySelector('.lightbox-caption');
         var closeBtn = modal.querySelector('.lightbox-close');
         var prevBtn = modal.querySelector('.lightbox-prev');
         var nextBtn = modal.querySelector('.lightbox-next');
 
-        function showImage(index) {
-            currentIdx = (index + galleryImages.length) % galleryImages.length;
-            var target = galleryImages[currentIdx];
-            modalImg.src = target.getAttribute('src');
-            modalImg.alt = target.getAttribute('alt') || '';
-            modalCaption.textContent = target.getAttribute('alt') || '';
+        function stopModalVideo() {
+            modalVideo.pause();
+            modalVideo.removeAttribute('src');
+            modalVideo.load();
+            modalVideo.style.display = 'none';
+        }
+
+        function showItem(index) {
+            currentIdx = (index + galleryItems.length) % galleryItems.length;
+            var target = galleryItems[currentIdx];
+
+            if (target.tagName === 'VIDEO') {
+                modalImg.style.display = 'none';
+                var sourceEl = target.querySelector('source');
+                var videoSrc = target.getAttribute('src') || (sourceEl ? sourceEl.getAttribute('src') : '');
+                modalVideo.src = videoSrc;
+                modalVideo.poster = target.getAttribute('poster') || '';
+                modalVideo.style.display = 'block';
+                modalVideo.play().catch(function () {});
+                modalCaption.textContent = target.getAttribute('data-title') || 'Delight Rabbit Farm Video';
+            } else {
+                stopModalVideo();
+                modalImg.src = target.getAttribute('src');
+                modalImg.alt = target.getAttribute('alt') || '';
+                modalImg.style.display = 'block';
+                modalCaption.textContent = target.getAttribute('alt') || '';
+            }
         }
 
         function openLightbox(index) {
-            showImage(index);
+            showItem(index);
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
+            stopModalVideo();
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        galleryImages.forEach(function (img, idx) {
-            img.addEventListener('click', function () {
+        galleryItems.forEach(function (item, idx) {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
                 openLightbox(idx);
             });
         });
@@ -168,11 +193,11 @@
         closeBtn.addEventListener('click', closeLightbox);
         prevBtn.addEventListener('click', function (e) {
             e.stopPropagation();
-            showImage(currentIdx - 1);
+            showItem(currentIdx - 1);
         });
         nextBtn.addEventListener('click', function (e) {
             e.stopPropagation();
-            showImage(currentIdx + 1);
+            showItem(currentIdx + 1);
         });
         modal.addEventListener('click', function (e) {
             if (e.target === modal) {
@@ -182,8 +207,8 @@
         document.addEventListener('keydown', function (e) {
             if (!modal.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showImage(currentIdx - 1);
-            if (e.key === 'ArrowRight') showImage(currentIdx + 1);
+            if (e.key === 'ArrowLeft') showItem(currentIdx - 1);
+            if (e.key === 'ArrowRight') showItem(currentIdx + 1);
         });
     }
 
